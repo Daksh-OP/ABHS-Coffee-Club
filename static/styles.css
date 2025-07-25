@@ -1,0 +1,98 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff8f0;
+  color: #4a3c31;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #d4b483;
+}
+h1 {
+  text-align: center;
+  color: #a65f2a;
+}
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+select, input[type="text"] {
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+.customizations label {
+  font-weight: normal;
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+button {
+  background-color: #a65f2a;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  background-color: #804517;
+}
+.order-summary {
+  background: #f2e8dc;
+  border: 1px solid #d4b483;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 6px;
+}
+
+.footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+.footer-logo {
+  max-width: 200px;
+  margin-bottom: 1rem;
+}
+.join-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.join-form input {
+  flex: 1 1 200px;
+  padding: 0.5rem;
+}
+.join-form button {
+  background: black;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.footer-links div {
+  width: 22%;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.footer-bottom {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #333;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ABHS Coffee Club</title>
+  <!-- ✅ Correct path to CSS using Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+
+  <main>
+    <h1>ABHS Coffee Club ☕️</h1>
+
+    <label for="nameInput">Your Name</label>
+    <input id="nameInput" type="text" placeholder="Enter your name" />
+
+    <label for="drinkSelect">Choose your drink</label>
+    <select id="drinkSelect"></select>
+
+    <label for="sizeSelect">Choose size</label>
+    <select id="sizeSelect"></select>
+
+    <div class="customizations">
+      <label>Add Customizations</label>
+      <div id="customizationsContainer"></div>
+    </div>
+
+    <button id="orderBtn">Place Order</button>
+
+    <div class="order-summary" id="orderSummary" style="display: none;">
+      <h2>Your Order</h2>
+      <p id="orderDetails"></p>
+      <p><strong>Total Price:</strong> $<span id="orderPrice"></span></p>
+      <p><strong>Order Time:</strong> <span id="orderTime"></span></p>
+    </div>
+  </main>
+
+  <!-- ✅ Correct script paths using Flask -->
+  <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+</body>
+</html>

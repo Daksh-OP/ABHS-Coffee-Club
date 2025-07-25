@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABHS Coffee Club ☕️</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>ABHS Coffee Club ☕️</h1>
+
+    <form id="orderForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+
+      <label for="drink">Choose your drink</label>
+      <select id="drink" required></select>
+
+      <label for="size">Choose size</label>
+      <select id="size" required></select>
+
+      <fieldset>
+        <legend>Add Customizations</legend>
+        <div id="customizations"></div>
+      </fieldset>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <div id="orderSummary" class="hidden">
+      <h2>Order Summary</h2>
+      <p id="summaryText"></p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 ABHS Coffee Club. Made with ☕️ by Daksh.</p>
+  </footer>
+
+  <!-- JavaScript files -->
+  <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - Coffee Club</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ccc; }
+    th { background-color: #eee; }
+  </style>
+</head>
+<body>
+  <h1>☕ Admin Dashboard</h1>
+  {% if orders %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Drink</th>
+        <th>Size</th>
+        <th>Customizations</th>
+        <th>Price ($)</th>
+        <th>Time</th>
+      </tr>
+      {% for order in orders %}
+      <tr>
+        <td>{{ order.name }}</td>
+        <td>{{ order.drink }}</td>
+        <td>{{ order.size }}</td>
+        <td>{{ ", ".join(order.customizations) }}</td>
+        <td>{{ order.price }}</td>
+        <td>{{ order.time }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% else %}
+    <p>No orders found.</p>
+  {% endif %}
+</body>
+</html>
