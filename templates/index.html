@@ -2,45 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ABHS Coffee Club ☕️</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ABHS Coffee Club</title>
+  <!-- ✅ Correct path to CSS using Flask -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
-  <div class="container">
+
+  <main>
     <h1>ABHS Coffee Club ☕️</h1>
 
-    <form id="orderForm">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required />
+    <label for="nameInput">Your Name</label>
+    <input id="nameInput" type="text" placeholder="Enter your name" />
 
-      <label for="drink">Choose your drink</label>
-      <select id="drink" required></select>
+    <label for="drinkSelect">Choose your drink</label>
+    <select id="drinkSelect"></select>
 
-      <label for="size">Choose size</label>
-      <select id="size" required></select>
+    <label for="sizeSelect">Choose size</label>
+    <select id="sizeSelect"></select>
 
-      <fieldset>
-        <legend>Add Customizations</legend>
-        <div id="customizations"></div>
-      </fieldset>
-
-      <button type="submit">Place Order</button>
-    </form>
-
-    <div id="orderSummary" class="hidden">
-      <h2>Order Summary</h2>
-      <p id="summaryText"></p>
+    <div class="customizations">
+      <label>Add Customizations</label>
+      <div id="customizationsContainer"></div>
     </div>
-  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 ABHS Coffee Club. Made with ☕️ by Daksh.</p>
-  </footer>
+    <button id="orderBtn">Place Order</button>
 
-  <!-- JavaScript files -->
+    <div class="order-summary" id="orderSummary" style="display: none;">
+      <h2>Your Order</h2>
+      <p id="orderDetails"></p>
+      <p><strong>Total Price:</strong> $<span id="orderPrice"></span></p>
+      <p><strong>Order Time:</strong> <span id="orderTime"></span></p>
+    </div>
+  </main>
+
+  <!-- ✅ Correct script paths using Flask -->
   <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
   <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
 </body>
 </html>
