@@ -1,46 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ABHS Coffee Club ☕️</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Club</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
 </head>
 <body>
-  <div class="container">
-    <h1>ABHS Coffee Club ☕️</h1>
+    <div class="background-accent"></div>
+    <header>
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Coffee Club Logo" class="logo" />
+        <h1>ABHS Coffee Club <span class="emoji">☕️</span></h1>
+    </header>
+    <main>
+        <div class="main-card">
+            <form id="coffee-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required autocomplete="off" />
 
-    <form id="orderForm">
-      <label for="name">Your Name</label>
-      <input type="text" id="name" placeholder="Enter your name" required />
+                <label for="drink">Choose your drink</label>
+                <select id="drink" required>
+                    <option value="">Select</option>
+                    <option value="Latte">Latte</option>
+                    <option value="Cappuccino">Cappuccino</option>
+                    <option value="Flat White">Flat White</option>
+                    <option value="Long Black">Long Black</option>
+                    <option value="Mocha">Mocha</option>
+                    <option value="Hot Chocolate">Hot Chocolate</option>
+                </select>
 
-      <label for="drink">Choose your drink</label>
-      <select id="drink" required></select>
+                <label for="size">Choose size</label>
+                <select id="size" required>
+                    <option value="">Select</option>
+                    <option value="Small">$2.50 - Small</option>
+                    <option value="Medium">$3.50 - Medium</option>
+                    <option value="Large">$4.50 - Large</option>
+                </select>
 
-      <label for="size">Choose size</label>
-      <select id="size" required></select>
+                <div id="customizations">
+                    <h3>Add Customizations</h3>
+                    <div class="custom-group">
+                        <span class="custom-group-title">Add-ons</span>
+                        <label><input type="checkbox" value="Extra shot" data-price="0.75" /> Extra shot (+$0.75)</label>
+                        <label><input type="checkbox" value="Whipped cream" data-price="0.70" /> Whipped cream (+$0.70)</label>
+                        <label><input type="checkbox" value="Chocolate syrup" data-price="0.60" /> Chocolate syrup (+$0.60)</label>
+                        <label><input type="checkbox" value="Vanilla syrup" data-price="0.60" /> Vanilla syrup (+$0.60)</label>
+                        <label><input type="checkbox" value="Caramel drizzle" data-price="0.60" /> Caramel drizzle (+$0.60)</label>
+                        <label><input type="checkbox" value="Cinnamon" data-price="0.30" /> Cinnamon (+$0.30)</label>
+                        <label><input type="checkbox" value="No sugar" data-price="0" /> No sugar</label>
+                    </div>
+                    <div class="custom-group">
+                        <span class="custom-group-title">Special Milk <em>(+ $0.50)</em></span>
+                        <label><input type="checkbox" value="Soy milk" data-price="0.50" /> Soy milk</label>
+                        <label><input type="checkbox" value="Almond milk" data-price="0.50" /> Almond milk</label>
+                        <label><input type="checkbox" value="Skim milk" data-price="0.50" /> Skim milk</label>
+                        <label><input type="checkbox" value="Lactose free milk" data-price="0.50" /> Lactose free milk</label>
+                    </div>
+                </div>
 
-      <fieldset>
-        <legend>Add Customizations</legend>
-        <div id="customizations"></div>
-      </fieldset>
-
-      <button type="submit">Place Order</button>
-    </form>
-
-    <div id="orderSummary" class="hidden">
-      <h2>Order Summary</h2>
-      <p id="summaryText"></p>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 ABHS Coffee Club. Made with ☕️ by Daksh.</p>
-  </footer>
-
-  <!-- JavaScript files -->
-  <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 ABHS Coffee Club</p>
+    </footer>
+    <script src="{{ url_for('static', filename='js/menu.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
 </html>
