@@ -1,98 +1,240 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #fff8f0;
-  color: #4a3c31;
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #d4b483;
-}
-h1 {
-  text-align: center;
-  color: #a65f2a;
-}
-label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-select, input[type="text"] {
-  width: 100%;
-  padding: 0.4rem;
-  font-size: 1rem;
-  margin-top: 0.3rem;
-}
-.customizations label {
-  font-weight: normal;
-  display: inline-block;
-  margin-right: 1rem;
-  cursor: pointer;
-}
-button {
-  background-color: #a65f2a;
-  color: white;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  font-size: 1rem;
-  margin-top: 1.5rem;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-}
-button:hover {
-  background-color: #804517;
-}
-.order-summary {
-  background: #f2e8dc;
-  border: 1px solid #d4b483;
-  padding: 1rem;
-  margin-top: 1.5rem;
-  border-radius: 6px;
+/* Modern Mint/Lavender Coffee Club Styles */
+
+.background-accent {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: radial-gradient(ellipse at 70% 10%, #e0f7fa 30%, #f3e7fa 80%), 
+              linear-gradient(120deg, #f5faff 0%, #f7e6ff 100%);
 }
 
-.footer {
-  background: #fff;
-  border-top: 1px solid #ddd;
-  padding: 2rem;
-  font-family: Arial, sans-serif;
-  color: #000;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #54496b;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
-.footer-logo {
-  max-width: 200px;
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.2rem;
   margin-bottom: 1rem;
 }
-.join-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem 0;
+.logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 0.4rem;
+  filter: drop-shadow(0 3px 14px #b3a1f1aa);
 }
-.join-form input {
-  flex: 1 1 200px;
-  padding: 0.5rem;
+h1 {
+  color: #8a58a1;
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px #e2d7f5cc;
+  margin: 0;
 }
-.join-form button {
-  background: black;
-  color: white;
-  padding: 0.6rem 1.5rem;
-  border: none;
+.emoji {
+  font-size: 1.5rem;
+  vertical-align: -3px;
+}
+
+/* Main card is wide and spacious on desktop */
+.main-card {
+  max-width: 620px;
+  margin: 2.5rem auto 2rem auto;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 28px;
+  box-shadow: 0 12px 38px 0 #c6b8f433, 0 2px 10px #aee2e633;
+  padding: 3rem 3.5rem 2.5rem 3.5rem;
+}
+
+/* Form styling */
+form label {
+  display: block;
+  margin-top: 1.1rem;
+  font-weight: 600;
+  color: #6c7fa7;
+  letter-spacing: 0.3px;
+  font-size: 1.15rem;
+}
+
+form input[type="text"],
+form select {
+  width: 100%;
+  margin-top: 0.3rem;
+  padding: 0.8rem 1.1rem;
+  border: 1.7px solid #d7c9fa;
+  border-radius: 10px;
+  font-size: 1.12rem;
+  background: #f8fafd;
+  color: #54496b;
+  box-shadow: 0 1.5px 7px #b3a1f122;
+  transition: border-color 0.23s, box-shadow 0.23s;
+}
+form input[type="text"]:focus,
+form select:focus {
+  border-color: #8a58a1;
+  outline: none;
+  box-shadow: 0 0 12px #b3a1f133;
+}
+
+/* Customizations */
+#customizations {
+  margin-top: 1.6rem;
+  padding: 1.3rem 1.2rem 0.9rem 1.2rem;
+  background: #e9f3ff;
+  border-radius: 12px;
+  border: 1.5px solid #d7c9fa;
+}
+
+#customizations h3 {
+  margin-top: 0;
+  color: #8a58a1;
+  font-weight: 700;
+  font-size: 1.17rem;
+  letter-spacing: 0.6px;
+  margin-bottom: 0.5rem;
+}
+
+.custom-group {
+  margin-bottom: 0.8rem;
+}
+.custom-group-title {
+  display: block;
+  font-size: 1.04rem;
+  font-weight: 600;
+  color: #5fbfd1;
+  margin-bottom: 0.15rem;
+  letter-spacing: 0.5px;
+}
+#customizations label {
+  display: inline-block;
+  margin-right: 1.2rem;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #756e94;
+  background: #f6f8ff;
+  padding: 0.16rem 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #d7c9fa;
+  transition: background 0.17s, color 0.17s, border-color 0.17s;
   cursor: pointer;
-  font-weight: bold;
+  font-size: 1.04rem;
 }
-.footer-links {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
+#customizations label:hover {
+  background: #e3e1f7;
+  color: #8a58a1;
+  border-color: #b3a1f1;
 }
-.footer-links div {
-  width: 22%;
-  font-size: 0.9rem;
-  line-height: 1.6;
+
+#customizations em {
+  color: #8a58a1;
+  font-style: normal;
+  font-size: 0.98em;
+  margin-left: 0.3em;
 }
-.footer-bottom {
-  margin-top: 2rem;
+
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 2.1rem 0 0.5rem 0;
+  background: linear-gradient(90deg, #5fbfd1 60%, #8a58a1 120%);
+  color: #fff;
+  border: none;
+  padding: 1.15rem 1.4rem;
+  font-size: 1.17rem;
+  font-weight: 700;
+  border-radius: 11px;
+  box-shadow: 0 3px 16px #b3a1f133;
+  letter-spacing: 1px;
+  transition: background 0.19s, box-shadow 0.13s, transform 0.11s;
+  cursor: pointer;
+}
+button[type="submit"]:hover {
+  background: linear-gradient(90deg, #8a58a1 60%, #5fbfd1 120%);
+  box-shadow: 0 7px 30px #aee2e644;
+  transform: translateY(-2px) scale(1.035);
+}
+
+/* Footer */
+footer {
+  background: transparent;
+  color: #8a58a1;
   text-align: center;
-  font-size: 0.8rem;
-  color: #333;
+  padding: 2rem 0 1.1rem 0;
+  font-size: 1.02rem;
+  margin-top: auto;
+  letter-spacing: 0.6px;
 }
+
+/* Responsive: On phone, compact and stack! */
+@media (max-width: 650px) {
+  .main-card {
+    max-width: 99vw;
+    padding: 1.2rem 0.6rem 1.2rem 0.6rem;
+    margin: 1.2rem 0.2rem 1.2rem 0.2rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #c6b8f433, 0 2px 7px #aee2e633;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0.9rem;
+  }
+  header {
+    margin-top: 0.7rem;
+    margin-bottom: 0.4rem;
+  }
+  .logo {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 0.25rem;
+  }
+  form label {
+    font-size: 1.02rem;
+  }
+  form input[type="text"],
+  form select {
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+    border-radius: 7px;
+  }
+  #customizations {
+    padding: 0.7rem 0.4rem 0.4rem 0.4rem;
+    border-radius: 7px;
+  }
+  .custom-group-title {
+    font-size: 0.99rem;
+  }
+  #customizations label {
+    font-size: 0.91rem;
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    margin-right: 0.55rem;
+  }
+  button[type="submit"] {
+    font-size: 1.03rem;
+    padding: 0.9rem 1rem;
+    border-radius: 7px;
+    margin-top: 1.4rem;
+  }
+  footer {
+    font-size: 0.98rem;
+    padding: 1.2rem 0 0.7rem 0;
+  }
+}
+
+/* Optionally, hide certain less-important elements on mobile if desired:
+@media (max-width: 650px) {
+  .some-element {
+    display: none;
+  }
+}
+*/
